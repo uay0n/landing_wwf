@@ -1,28 +1,65 @@
 /* index.css */
 /* ----------------------------------------모바일 레이아웃 시작 */
-#wrap {}
+#wrap {
+    min-width:320px;
+    /* width: 440px; */
+    /* 1. 전체레이아웃의 너비를 고정(px)이 아닌 가변형(%)으로 만들기 */
+    /* 2. 화면너비가 너무 작아지면 레이아웃이 깨지므로 최소 여기까지만 작아져야한다는 뜻으로 모바일 최소 너비체크하고 CSS 최소너비 설정하기 */
+    min-height: 956px; /* 피그마 최소높이제한(그 이상은 max-content(Hug)기본) */
+    margin: var(--spacing-auto); 
+    background-color: aqua;
+}
 /* ---------------------------------------------1행 제목+후원 */
 #wrap .intro {
     background-image: url(../images/bg1.png);
     background-size: cover; /* 피그마 - 채우기 */
-    z-index: 600; position: relative;
+    position: relative; /* after에 들어간 absolute의 기준위치 */
+    background-position: center top;
 }
 #wrap .intro::after { /* 이미지 위 깔리는 반투명 그라데이션용도 가상선택자 */
     background: var(--color-gradient-dark);
-    content:; display: block;
+    content:''; display: block;
     width: 100%; height: 100%;
-    position: absolute; left: 0; top: 0; z-index: 800;
+    position: absolute; left:0 ; top:0 ; z-index: 90;
 }
 #wrap .intro .container {
     height: 524px;
     /* 실제 내용태그들을 묶는 레이아웃태그에 크기 입력 권장 */
+    position: relative; z-index: 100;
+    text-align: center;
 }
 #wrap .intro .container * {
-    color: var(--color-light);
+    color:var(--color-light)
 }
-#wrap .intro .container .logo {width: var(--icon-sm);}
+#wrap .intro .container .logo {
+    width: var(--icon-sm);
+    position: absolute; left: 15px; top: 60px;
+}
 #wrap .intro .container .logo img {width: 100%;}
-#wrap .intro .container .logo .title {}
-#wrap .intro .container .logo .btn_g {}
-#wrap .intro .container .logo .btn_g .sponser_btn {}
-#wrap .intro .container .logo .btn_g .sponser_qna_btn {}
+#wrap .intro .container .title {
+    font-size: var(--m-font-size-lg);
+    line-height :1.4; font-weight: var(--m-font-weight-base);
+}
+#wrap .intro .container .btn_g {
+    display: flex; flex-flow: column nowrap;
+    gap: 5px; position: absolute; bottom: 53px;
+    justify-content: center; align-items: center;
+}
+#wrap .intro .container .btn_g * {
+    display: flex; justify-content: center; align-items: center;
+    font-size: var(--m-font-size-sm);
+    background-color: var(--color-primary);
+    border-radius: 50px;
+    padding:5px 10px;
+    gap: 5px;
+}
+#wrap .intro .container .btn_g a::after {
+    /* 화살표 SVG 연결 */
+    background-image: url(../images/arrow.svg);
+    background-size: 100%;
+    filter: invert(1);
+    content: ''; display: block;
+    width: 10px; height: 10px;
+}
+#wrap .intro .container .btn_g .sponser_btn {}
+#wrap .intro .container .btn_g .sponser_qna_btn {}

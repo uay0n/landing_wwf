@@ -1,1 +1,23 @@
-/* responsive.css */
+/* responsive.css / 반응형 미디어쿼리 규칙 */
+/* @media screen and (minmax 규칙) {실행선택자와값} */
+/* index.css 모바일 기본상태 */
+/* 모바일로 시작했기 때문에 responsive.css에선 점점 큰값을 설계하는 순서로 진행한다. */
+/* 미디어쿼리 큐칙 내에서 작성하는 선택자는 해당 규칙이상일 때 달라지는 디자인값만 작성한다. */
+/* 기존(이전 규칙)과 동일한 디자인 모습은 작성하지 않으면 자동으로 유지된다. */
+@media screen and (min-width:760px) {/* 760이상일 때 (태블릿모습시작) */
+    /* 선택자 {속성:값; 속성:값;} */
+    #wrap {
+        min-height: 1080px;
+    }
+    #wrap .intro {}
+    #wrap .intro::after {}
+    #wrap .intro .container {height: 677px;}
+    #wrap .intro .container .logo {
+        width: var(--icon-md);
+        left: 50px; top: 56px;
+    }
+    #wrap .intro .container .logo img {}
+    #wrap .intro .container .title {
+        font-size: var(--t-font-size-lg);
+    }
+}/* e:min760 */
