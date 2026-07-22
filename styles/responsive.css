@@ -4,20 +4,172 @@
 /* 모바일로 시작했기 때문에 responsive.css에선 점점 큰값을 설계하는 순서로 진행한다. */
 /* 미디어쿼리 큐칙 내에서 작성하는 선택자는 해당 규칙이상일 때 달라지는 디자인값만 작성한다. */
 /* 기존(이전 규칙)과 동일한 디자인 모습은 작성하지 않으면 자동으로 유지된다. */
-@media screen and (min-width:760px) {/* 760이상일 때 (태블릿모습시작) */
+@media screen and (min-width:760px) {/* 760 이상일 때(태블릿 모습시작) */
     /* 선택자 {속성:값; 속성:값;} */
-    #wrap {
+    #wrqp {
         min-height: 1080px;
     }
     #wrap .intro {}
     #wrap .intro::after {}
-    #wrap .intro .container {height: 677px;}
+    #wrap .intro .container {
+        height: 684px;
+    }
     #wrap .intro .container .logo {
-        width: var(--icon-md);
-        left: 50px; top: 56px;
+        width:48px; left: 61px; top: 43px;
     }
     #wrap .intro .container .logo img {}
     #wrap .intro .container .title {
-        font-size: var(--t-font-size-lg);
+        font-size:var(--t-font-size-lg);
+        margin-bottom: 32px;
     }
+    #wrap .intro .container .btn_g {
+        gap:0;
+        position: static; 
+        /* absolute 해제 목적의 변경 값 -> relative (포지션 기능 살리고 싶을 때 z-index, left, top등 옵션 사용 필요) */
+        /* absolute 해제 목적의 변경 값 -> stati요 (포지션 기능 해제(위 옵션 불가) */
+        bottom: 0;
+    }
+    #wrap .intro .container .btn_g * {
+        font-size: var(--t-font-size-base);
+        padding:0;
+    }
+    #wrap .intro .container .btn_g a::after {
+        width: 15px; height: 15px;
+    }
+    #wrap .intro .container .btn_g .sponser_btn {
+        padding: 10px 30px;
+    }
+    #wrap .intro .container .btn_g .sponser_qna_btn {
+        padding: 5px 15px;
+        position: absolute; bottom: 60px; right: 67px;
+    }
+    /* ------------------------------------------------------------2행 퀴즈(태블릿 시작) */
+    #wrap .quiz {
+        padding: 30px 80px; 
+    }
+    #wrap .quiz .container {
+        display: flex; flex-flow: row nowrap;
+        gap: 70px; justify-content:space-between;
+        align-items: center; /* 수직중앙 */
+    }
+    /* ------------------------------------------------2행 2-1 퀴즈 */
+    #wrap .quiz .container #quiz_frm {width: 50%;}
+    #wrap .quiz .container #quiz_frm * {}
+    #wrap .quiz .container #quiz_frm h2 {
+        font-size: var(--t-font-size-md);
+        font-weight: var(--m-font-weight-md);
+    }
+    #wrap .quiz .container #quiz_frm h3 {
+        font-size: var(--t-font-size-base);
+    }
+    #wrap .quiz .container #quiz_frm .qiuz_group {}
+    #wrap .quiz .container #quiz_frm .qiuz_group li {
+        font-size: var(--t-font-size-base);
+    }
+    #wrap .quiz .container #quiz_frm .qiuz_group li input[name=quiz_g] {}
+    #wrap .quiz .container #quiz_frm .qiuz_group li input[name=quiz_g]:checked + label {}
+    #wrap .quiz .container #quiz_frm .qiuz_group li label {
+        background-size: 25px;
+    }
+    #wrap .quiz .container p {}
+    #wrap .quiz .container p #quiz_btn {
+        background-color: var(--color-dark-pri); 
+        width:100%; border-radius: 50px;
+        padding: 12px 0; 
+        font-size: var(--t-font-size-base);
+    }
+    /* ------------------------------------------------2행 2-2 퀴즈 */
+    #wrap .quiz .container .quiz_status {width: 50%;}
+    #wrap .quiz .container .quiz_status .quiz_join {}
+    #wrap .quiz .container .quiz_status .quiz_join h3 {
+        font-size: var(--t-font-size-base);
+    }
+    #wrap .quiz .container .quiz_status .quiz_join p {
+        font-size: var(--t-font-size-md);
+    }
+    #wrap .quiz .container .quiz_status .quiz_join p em {}
+    #wrap .quiz .container .quiz_status .update {
+        font-size: var(--t-font-size-sm);
+    }
+    /* ------------------------------------------------------------2행 퀴즈(태블릿 종료) */
 }/* e:min760 */
+/* ------------------------------------------------태블릿->데스크탑 */
+@media screen and (min-width:1120px) {/* 1120 이상일 때  */
+    #wrqp {}
+    #wrap .intro {}
+    #wrap .intro::after {}
+    #wrap .intro .container {
+        height: 872px;
+        max-width:1120px;
+        margin: var(--spacing-auto);
+    }
+    #wrap .intro .container .logo {
+        width:80px; left: 0px; top: 43px;
+    }
+    #wrap .intro .container .logo img {}
+    #wrap .intro .container .title {
+        font-size:var(--d-font-size-lg);
+        margin-bottom: 30px;
+    }
+    #wrap .intro .container .btn_g {}
+    #wrap .intro .container .btn_g * {
+        font-size: var(--d-font-size-sm);
+    }
+    #wrap .intro .container .btn_g a::after {
+        width: 22px; height: 22px;
+    }
+    #wrap .intro .container .btn_g .sponser_btn {
+        padding: 20px 40px;
+    }
+    #wrap .intro .container .btn_g .sponser_btn::after {width: 22px; height: 22px;}
+    #wrap .intro .container .btn_g .sponser_qna_btn {
+    padding: 10px 25px;
+    position: absolute; bottom: 42px; right: 0px;
+    }
+    /* 2행 퀴즈 -데스크탑 시작 */
+        #wrap .quiz {
+        padding: 30px 80px;
+    }
+    #wrap .quiz .container {
+        width: var(--width-desktop); margin: var(--spacing-auto);
+    }
+    /* ------------------------------------------------2행 2-1 퀴즈 */
+    #wrap .quiz .container #quiz_frm {}
+    #wrap .quiz .container #quiz_frm * {}
+    #wrap .quiz .container #quiz_frm h2 {
+        font-size: var(--d-font-size-md);
+    }
+    #wrap .quiz .container #quiz_frm h3 {
+        font-size: var(--d-font-size-base);
+    }
+    #wrap .quiz .container #quiz_frm .qiuz_group {gap: 15px;}
+    #wrap .quiz .container #quiz_frm .qiuz_group li {
+        font-size: var(--d-font-size-base);
+    }
+    #wrap .quiz .container #quiz_frm .qiuz_group li input[name=quiz_g] {}
+    #wrap .quiz .container #quiz_frm .qiuz_group li input[name=quiz_g]:checked + label {}
+    #wrap .quiz .container #quiz_frm .qiuz_group li label {
+        line-height: 1.5;
+        background-size: 30px;
+        padding-left: 35px;
+    }
+    #wrap .quiz .container p {}
+    #wrap .quiz .container p #quiz_btn {
+        padding: 15px 0; 
+        font-size: var(--d-font-size-base);
+    }
+    /* ------------------------------------------------2행 2-2 퀴즈 */
+    #wrap .quiz .container .quiz_status {}
+    #wrap .quiz .container .quiz_status .quiz_join {}
+    #wrap .quiz .container .quiz_status .quiz_join h3 {
+        font-size: var(--d-font-size-base);
+    }
+    #wrap .quiz .container .quiz_status .quiz_join p {
+        font-size: var(--d-font-size-md);
+    }
+    #wrap .quiz .container .quiz_status .quiz_join p em {}
+    #wrap .quiz .container .quiz_status .update {
+        font-size: var(--d-font-size-base);
+    }
+    /* 2행 퀴즈 -데스크탑 종료 */
+}

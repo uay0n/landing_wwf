@@ -26,6 +26,53 @@
                 </div>
             </div>
         </section><!-- e:intro -->
+        <section class="quiz"><!-- 배경사진이 있는 섹션부분 -->
+            <!-- 정답보기버튼 클릭 시 실행되는 오답박스 -->
+            <div class="answer_popup_bg flex-col-center"><!-- 전체 body를 덮는 어두운배경 -->
+                <div class="answer_box flex-col-center"><!-- 실제 오답박스 부모영역 -->
+                    <button type="button" id="answer_close_btn">
+                        <img src="./images/answer_close_btn.png" alt="오답닫기">
+                    </button>
+                    <h2>오답입니다!</h2>
+                    <p>해마다 북극빙하면적이 감소하고 있습니다.<br>북극곰을 지키는 후원을 부탁드립니다.</p>
+                </div>
+            </div>
+            <!-- 퀴즈 컨테이너 시작위치 -->
+            <div class="container"><!-- M,T(채우기)/너비(가운데)/데스크용 -->
+                <!-- 2-1.퀴즈 -->
+                <form action="#" method="get" id="quiz_frm">
+                    <h2>Quiz</h2>
+                    <h3>20년 사이 북극 빙하 면적은 몇 % 감소했을까요?</h3>
+                    <ul class="qiuz_group flex-col">
+                        <li>
+                            <input type="radio" name="quiz_g" value="answer30" id="answer30">
+                            <label for="answer30">30%</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="quiz_g" value="answer40" id="answer40">
+                            <label for="answer40">40%</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="quiz_g" value="answer50" id="answer50">
+                            <label for="answer50">50%</label>
+                        </li>
+                        <li>
+                            <input type="radio" name="quiz_g" value="answer60" id="answer60">
+                            <label for="answer60">60%</label>
+                        </li>
+                    </ul>
+                    <p><button type="button" id="quiz_btn">정답확인하기</button></p>
+                </form>
+                <!-- 2-2.현황 -->
+                <div class="quiz_status">
+                    <div class="quiz_join">
+                        <h3>퀴즈참여현황</h3>
+                        <p><em>38,387</em>명 참여</p>
+                    </div>
+                    <p class="update">*퀴즈참여현황은 매주 업데이트됩니다</p>
+                </div>
+            </div>
+        </section>
     </div>
 </body>
 </html>

@@ -8,7 +8,8 @@
     min-height: 956px; /* 피그마 최소높이제한(그 이상은 max-content(Hug)기본) */
     margin: var(--spacing-auto); 
     background-color: aqua;
-}
+    position: relative;
+} 
 /* ---------------------------------------------1행 제목+후원 */
 #wrap .intro {
     background-image: url(../images/bg1.png);
@@ -56,10 +57,113 @@
 #wrap .intro .container .btn_g a::after {
     /* 화살표 SVG 연결 */
     background-image: url(../images/arrow.svg);
+    background-repeat: no-repeat;
     background-size: 100%;
+    background-position: center;
     filter: invert(1);
     content: ''; display: block;
     width: 10px; height: 10px;
 }
 #wrap .intro .container .btn_g .sponser_btn {}
 #wrap .intro .container .btn_g .sponser_qna_btn {}
+/* ------------------------------------------------2행 퀴즈 */
+#wrap .quiz {
+    background-image: url(../images/quiz_bg.png);
+    padding: 20px 15px; 
+    /* 반응형 큰 배경이미지 사용 시 권장 속성:값 */
+    background-size: cover; /* 채우기 */
+    background-position: center top;
+}
+#wrap .quiz .container {}
+/* ------------------------------------------------2행 2-1 퀴즈 */
+#wrap .quiz .container #quiz_frm {
+    display: flex; flex-flow: column nowrap;
+    gap: 10px;
+    padding-bottom: 10px;
+}
+#wrap .quiz .container #quiz_frm * {color: #fff;}
+#wrap .quiz .container #quiz_frm h2 {
+    font-size: var(--m-font-size-md);
+    font-weight: var(--m-font-weight-md);
+}
+#wrap .quiz .container #quiz_frm h3 {
+    font-size: var(--m-font-size-base);
+}
+#wrap .quiz .container #quiz_frm .qiuz_group {gap: 10px;}
+#wrap .quiz .container #quiz_frm .qiuz_group li {
+    font-size: var(--m-font-size-base);
+    font-weight: var(--m-font-weight-md);
+}
+#wrap .quiz .container #quiz_frm .qiuz_group li input[name=quiz_g] {display: none;}
+/* =================================================input 체크상태에 따른 이미지 변경 */
+#wrap .quiz .container #quiz_frm .qiuz_group li input[name=quiz_g]:checked + label {
+    background-image: url(../images/qiuz_on.svg);
+    background-repeat: no-repeat;
+}
+#wrap .quiz .container #quiz_frm .qiuz_group li label {
+    background-image: url(../images/qiuz_off.svg);
+    background-repeat: no-repeat;
+    padding-left: 25px;
+    display: block;
+    background-size: 20px;
+    line-height: 1.2;
+}
+#wrap .quiz .container p {}
+#wrap .quiz .container p #quiz_btn {
+    background-color: var(--color-dark-pri); 
+    width:100%; border-radius: 50px;
+    padding: 8px 0; 
+    font-size: var(--m-font-size-base);
+}
+/* ------------------------------------------------2행 2-2 퀴즈 */
+#wrap .quiz .container .quiz_status {}
+#wrap .quiz .container .quiz_status .quiz_join {
+    border-radius: 20px; border: 1px solid var(--color-primary);
+    overflow: hidden; margin-bottom: 8px;
+    text-align: center;
+}
+#wrap .quiz .container .quiz_status .quiz_join h3 {
+    background-color: var(--color-primary);
+    color: var(--color-light);
+    font-size: var(--m-font-size-base);
+    padding: 8px 0; font-weight: var(--m-font-weight-md);
+}
+#wrap .quiz .container .quiz_status .quiz_join p {
+    font-size: var(--m-font-size-md);
+    font-weight: var(--m-font-weight-md);
+    padding: 40px 0; background-color: var(--color-light);
+}
+#wrap .quiz .container .quiz_status .quiz_join p em {
+    font-weight: var(--m-font-weight-xl);
+    color: var(--color-primary);
+}
+#wrap .quiz .container .quiz_status .update {
+    text-align: end;
+    color:var(--color-light);
+    font-size: var(--m-font-size-sm);
+}
+/* -------------------------------------------팝업창 */
+#wrap .quiz .answer_popup_bg {
+    background-color: rgba(0,0,0,0.5);
+    position:fixed; top:0; left: 0;
+    width: 100%; height: 100%; z-index: 999;
+    /* var.css의 flex layout class 중 골라서 태그에 적용하기 */
+}
+#wrap .quiz .answer_popup_bg .answer_box {
+    background-color: var(--color-light); 
+    width: 280px;height: 150px;
+    position: relative; 
+}
+#wrap .quiz .answer_popup_bg .answer_box::after
+#wrap .quiz .answer_popup_bg .answer_box #answer_close_btn {}
+#wrap .quiz .answer_popup_bg .answer_box #answer_close_btn img {
+    position: absolute; right: 10px; top: 10px;
+}
+#wrap .quiz .answer_popup_bg .answer_box h2 {
+    font-size: var(t-font-size-base);
+    font-weight: var(--m-font-weight-md);
+}
+#wrap .quiz .answer_popup_bg .answer_box p {
+    font-size: var(--m-font-size-sm);
+    text-align: center;
+}
