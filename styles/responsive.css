@@ -29,20 +29,6 @@
         /* absolute 해제 목적의 변경 값 -> stati요 (포지션 기능 해제(위 옵션 불가) */
         bottom: 0;
     }
-    #wrap .intro .container .btn_g * {
-        font-size: var(--t-font-size-base);
-        padding:0;
-    }
-    #wrap .intro .container .btn_g a::after {
-        width: 15px; height: 15px;
-    }
-    #wrap .intro .container .btn_g .sponser_btn {
-        padding: 10px 30px;
-    }
-    #wrap .intro .container .btn_g .sponser_qna_btn {
-        padding: 5px 15px;
-        position: absolute; bottom: 60px; right: 67px;
-    }
     /* ------------------------------------------------------------2행 퀴즈(태블릿 시작) */
     #wrap .quiz {
         padding: 30px 80px; 
@@ -92,6 +78,38 @@
         font-size: var(--t-font-size-sm);
     }
     /* ------------------------------------------------------------2행 퀴즈(태블릿 종료) */
+    /* ------------------------------------------------------------3행 비디오*/
+    #wrap .video_bg {
+    padding: 100px 0; 
+}
+#wrap .video_bg  .container {
+    gap: 30px;
+}
+#wrap .video_bg  .container h1 {
+    font-size: var(--t-font-size-md);
+}
+#wrap .video_bg  .container .video {}
+#wrap .video_bg  .container .video iframe {}
+    /* ------------------------------------------------------------3행 비디오(종료)*/
+        /* ------------------------------------------------------------4행 감소*/
+        #wrap .area {
+        padding: 100px 100px;
+    }
+    #wrap .area .container {
+        gap: 30px;
+    }
+    #wrap .area .container * {}
+    #wrap .area .container h3 {
+        font-size: var(--t-font-size-md);
+        width: 760px;
+    }
+    #wrap .area .container h3 span {display: inline};
+    #wrap .area .container h3 em {}
+    #wrap .area .container p {
+        font-size: var(--t-font-size-sm)
+    }
+    #wrap .area .container p  {}
+    #wrap .area .container p img {}
 }/* e:min760 */
 /* ------------------------------------------------태블릿->데스크탑 */
 @media screen and (min-width:1120px) {/* 1120 이상일 때  */
@@ -110,21 +128,6 @@
     #wrap .intro .container .title {
         font-size:var(--d-font-size-lg);
         margin-bottom: 30px;
-    }
-    #wrap .intro .container .btn_g {}
-    #wrap .intro .container .btn_g * {
-        font-size: var(--d-font-size-sm);
-    }
-    #wrap .intro .container .btn_g a::after {
-        width: 22px; height: 22px;
-    }
-    #wrap .intro .container .btn_g .sponser_btn {
-        padding: 20px 40px;
-    }
-    #wrap .intro .container .btn_g .sponser_btn::after {width: 22px; height: 22px;}
-    #wrap .intro .container .btn_g .sponser_qna_btn {
-    padding: 10px 25px;
-    position: absolute; bottom: 42px; right: 0px;
     }
     /* 2행 퀴즈 -데스크탑 시작 */
         #wrap .quiz {
@@ -172,4 +175,37 @@
         font-size: var(--d-font-size-base);
     }
     /* 2행 퀴즈 -데스크탑 종료 */
+        /* ------------------------------------------------------------3행 비디오*/
+        #wrap .video_bg {
+        padding: 150px 0; 
+    }
+    #wrap .video_bg  .container {
+        gap: 50px;
+    }
+    #wrap .video_bg  .container h1 {
+        font-size: var(--d-font-size-md);
+    }
+    #wrap .video_bg  .container .video {}
+    #wrap .video_bg  .container .video iframe {}
+    #wrap .video_bg  .container .sponser_btn {}
+    /* ------------------------------------------------------------3행 비디오(종료)*/
+    /* ------------------------------------------------------------4행 감소*/
+        #wrap .area {
+        padding: 200px 200px;
+    }
+    #wrap .area .container {
+        gap: 50px;
+    }
+    #wrap .area .container * {}
+    #wrap .area .container h3 {
+        font-size: var(--d-font-size-md);
+        width: 1220px;
+    }
+    #wrap .area .container h3 span {};
+    #wrap .area .container h3 em {}
+    #wrap .area .container p {
+        font-size: var(--d-font-size-sm)
+    }
+    #wrap .area .container p  {}
+    #wrap .area .container p img {}
 }

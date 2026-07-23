@@ -64,3 +64,59 @@
 .flex-col{
     display: flex; flex-flow: column nowrap;
 }
+/* =======================공통 후원/질문버튼(모바일) */
+/* 북극곰 후원하기 버튼 만들기 */
+.sponser_btn, .sponser_qna_btn {
+    display: flex; justify-content: center; align-items: center;
+    font-size: var(--m-font-size-sm);
+    background-color: var(--color-primary);
+    border-radius: 50px;
+    padding:5px 10px;
+    gap: 5px; color: var(--color-light);
+}
+/* 북금곰 후원하기 버튼 화살표 만들기 */
+.sponser_btn::after,
+.sponser_qna_btn::after{
+    background-image: url(../images/arrow.svg);
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-position: center;
+    filter: invert(1);
+    content: ''; display: block;
+    width: 10px; height: 10px;
+}
+/* ------------------------------------공통후원/질문버튼(태블릿) */
+@media screen and (min-width:760px){
+    .sponser_btn, .sponser_qna_btn{
+        font-size: var(--t-font-size-base);
+        padding:0;
+    }
+    .sponser_btn::after,
+    .sponser_qna_btn::after {
+        width: 15px; height: 15px;
+    }
+    .sponser_btn{
+        padding: 10px 30px;
+    }
+    .sponser_qna_btn {
+        padding: 5px 15px;
+        position: absolute; bottom: 60px; right: 67px;
+    }
+}/* e:min760 */
+@media screen and (min-width:1120px){
+    .sponser_btn, .sponser_qna_btn {
+        font-size: var(--d-font-size-sm);
+    }
+    .sponser_btn::after,
+    .sponser_qna_btn::after{
+        width: 22px; height: 22px;
+    }
+    .sponser_btn{
+        padding: 20px 40px;
+    }
+    .sponser_btn::after {width: 22px; height: 22px;}
+    .sponser_qna_btn {
+    padding: 10px 25px;
+    position: absolute; bottom: 42px; right: 0px;
+    }
+}
